@@ -400,7 +400,7 @@ def aplicar_logica_primer_orden(grafo, hora, prisa, accesibilidad):
 # =============================================================================
 
 def visualizar_grafo_metro(grafo: GrafoMetro, ruta: List[str] = None):
-    """Visualiza el grafo del metro con la ruta encontrada - Versión SIMPLE"""
+    """Visualiza el grafo del metro con la ruta encontrada - Nodos coloreados por línea"""
     
     G = nx.Graph()
     pos = {}
@@ -427,24 +427,47 @@ def visualizar_grafo_metro(grafo: GrafoMetro, ruta: List[str] = None):
         nx.draw_networkx_edges(G, pos, edgelist=ruta_edges, 
                               edge_color='green', width=4, alpha=0.8)
     
-    # Dibujar nodos
+    # Definir colores para cada línea
+    colores_linea = {
+        1: '#F54EA2',  # Rosa (Línea 1)
+        2: '#0066CC',  # Azul (Línea 2)
+        3: '#B5BD00',  # Verde (Línea 3)
+        4: '#63C5C7',  # Cian (Línea 4)
+        5: '#FFD200',  # Amarillo (Línea 5)
+    }
+    
+    # Separar nodos por tipo
     nodos_transbordo = [n for n, e in grafo.estaciones.items() if e.es_transbordo]
-    nodos_normales = [n for n, e in grafo.estaciones.items() if not e.es_transbordo]
+    nodos_por_linea = {1: [], 2: [], 3: [], 4: [], 5: []}
     
-    # Nodos normales
-    nx.draw_networkx_nodes(G, pos, nodelist=nodos_normales,
-                          node_color='lightblue', node_size=300, alpha=0.8)
+    # Clasificar nodos normales por línea
+    for nombre, estacion in grafo.estaciones.items():
+        if not estacion.es_transbordo:
+            # Tomar la primera línea de la estación
+            linea_principal = estacion.lineas[0]
+            nodos_por_linea[linea_principal].append(nombre)
     
-    # Nodos de transbordo
+    # Dibujar nodos normales coloreados por línea
+    for linea, nodos in nodos_por_linea.items():
+        if nodos:
+            nx.draw_networkx_nodes(G, pos, nodelist=nodos,
+                                  node_color=colores_linea[linea], 
+                                  node_size=300, alpha=0.8,
+                                  edgecolors='black', linewidths=0.5)
+    
+    # Nodos de transbordo en ROJO
     nx.draw_networkx_nodes(G, pos, nodelist=nodos_transbordo,
-                          node_color='red', node_size=400, alpha=0.8)
+                          node_color='red', node_size=400, alpha=0.9,
+                          edgecolors='darkred', linewidths=1.5)
     
     # Resaltar origen y destino si hay ruta
     if ruta:
         nx.draw_networkx_nodes(G, pos, nodelist=[ruta[0]],
-                              node_color='green', node_size=500, alpha=1)
+                              node_color='lime', node_size=500, alpha=1,
+                              edgecolors='darkgreen', linewidths=2)
         nx.draw_networkx_nodes(G, pos, nodelist=[ruta[-1]],
-                              node_color='darkred', node_size=500, alpha=1)
+                              node_color='darkred', node_size=500, alpha=1,
+                              edgecolors='black', linewidths=2)
     
     # Etiquetas - mostrar TODOS los nombres
     labels = {nombre: nombre for nombre in grafo.estaciones.keys()}
@@ -455,7 +478,20 @@ def visualizar_grafo_metro(grafo: GrafoMetro, ruta: List[str] = None):
         plt.title(f"Metro CDMX - Ruta: {ruta[0]} → {ruta[-1]} ({len(ruta)} estaciones)",
                  fontsize=14, fontweight='bold')
     else:
-        plt.title("Red del Metro CDMX (5 Líneas)", fontsize=14, fontweight='bold')
+        plt.title("Red del Metro CDMX (5 Líneas) - Nodos coloreados por línea, Transbordos en ROJO", 
+                 fontsize=14, fontweight='bold')
+    
+    # Leyenda
+    from matplotlib.patches import Patch
+    legend_elements = [
+        Patch(facecolor=colores_linea[1], edgecolor='black', label='Línea 1 (Rosa)'),
+        Patch(facecolor=colores_linea[2], edgecolor='black', label='Línea 2 (Azul)'),
+        Patch(facecolor=colores_linea[3], edgecolor='black', label='Línea 3 (Verde)'),
+        Patch(facecolor=colores_linea[4], edgecolor='black', label='Línea 4 (Cian)'),
+        Patch(facecolor=colores_linea[5], edgecolor='black', label='Línea 5 (Amarillo)'),
+        Patch(facecolor='red', edgecolor='darkred', label='Transbordo'),
+    ]
+    plt.legend(handles=legend_elements, loc='upper left', fontsize=10)
     
     plt.axis('off')
     plt.tight_layout()
@@ -789,3 +825,5 @@ while True:
         break  
     else:
         print("❌ Línea no válida. Por favor, selecciona una línea entre 1 y 5.")
+
+```
