@@ -476,24 +476,24 @@ def crear_metro_cdmx_completo() -> GrafoMetro:
     # ========== LÍNEA 1 (ROSA) - Observatorio ↔ Pantitlán ==========
     estaciones_l1 = [
         ("Observatorio", [1], (0, 50)),
-        ("Tacubaya", [1], (3, 50)),
-        ("Juanacatlán", [1], (6, 50)),
-        ("Chapultepec", [1], (9, 50)),
-        ("Sevilla", [1], (12, 50)),
-        ("Insurgentes", [1], (15, 50)),
-        ("Cuauhtémoc", [1], (18, 50)),
-        ("Balderas", [1, 3], (21, 50)),
-        ("Salto del Agua", [1], (24, 50)),
-        ("Isabel la Católica", [1], (27, 50)),
-        ("Pino Suárez", [1, 2], (30, 50)),
-        ("Merced", [1], (33, 50)),
-        ("Candelaria", [1, 4], (36, 50)),
-        ("San Lázaro", [1], (39, 50)),
-        ("Moctezuma", [1], (42, 50)),
-        ("Balbuena", [1], (45, 50)),
-        ("Boulevard Puerto Aéreo", [1], (48, 50)),
-        ("Gómez Farías", [1], (51, 50)),
-        ("Zaragoza", [1], (54, 50)),
+        ("Tacubaya", [1], (3, 51)),
+        ("Juanacatlán", [1], (6, 53)),
+        ("Chapultepec", [1], (9, 54)),
+        ("Sevilla", [1], (12, 55)),
+        ("Insurgentes", [1], (15, 55)),
+        ("Cuauhtémoc", [1], (18, 56)),
+        ("Balderas", [1, 3], (21, 56)),
+        ("Salto del Agua", [1], (24, 56)),
+        ("Isabel la Católica", [1], (27, 55)),
+        ("Pino Suárez", [1, 2], (30, 55)),
+        ("Merced", [1], (33, 54)),
+        ("Candelaria", [1, 4], (36, 55)),
+        ("San Lázaro", [1], (39, 56)),
+        ("Moctezuma", [1], (42, 55)),
+        ("Balbuena", [1], (45, 54)),
+        ("Boulevard Puerto Aéreo", [1], (48, 53)),
+        ("Gómez Farías", [1], (51, 52)),
+        ("Zaragoza", [1], (54, 51)),
         ("Pantitlán", [1, 5], (57, 50)),
     ]
     
@@ -521,30 +521,30 @@ def crear_metro_cdmx_completo() -> GrafoMetro:
     
     # ========== LÍNEA 2 (AZUL) - Cuatro Caminos ↔ Tasqueña ==========
     estaciones_l2 = [
-        ("Cuatro Caminos", [2], (0, 40)),
-        ("Panteones", [2], (3, 40)),
-        ("Tacuba", [2], (6, 40)),
-        ("Cuitláhuac", [2], (9, 40)),
-        ("Popotla", [2], (12, 40)),
-        ("Colegio Militar", [2], (15, 40)),
-        ("Normal", [2], (18, 40)),
-        ("San Cosme", [2], (21, 40)),
-        ("Revolución", [2], (24, 40)),
-        ("Hidalgo", [2, 3], (27, 40)),
-        ("Bellas Artes", [2], (30, 40)),
-        ("Allende", [2], (33, 40)),
-        ("Zócalo", [2], (36, 40)),
+        ("Cuatro Caminos", [2], (0, 80)),
+        ("Panteones", [2], (3, 79)),
+        ("Tacuba", [2], (7, 79)),
+        ("Cuitláhuac", [2], (9, 76)),
+        ("Popotla", [2], (11, 74)),
+        ("Colegio Militar", [2], (13, 72)),
+        ("Normal", [2], (15, 70)),
+        ("San Cosme", [2], (17, 67)),
+        ("Revolución", [2], (19, 66)),
+        ("Hidalgo", [2, 3], (21, 64)),
+        ("Bellas Artes", [2], (24, 62)),
+        ("Allende", [2], (26, 60)),
+        ("Zócalo", [2], (27, 58)),
         # Pino Suárez ya existe en L1
-        ("San Antonio Abad", [2], (42, 40)),
-        ("Chabacano", [2], (45, 40)),
-        ("Viaducto", [2], (48, 40)),
-        ("Xola", [2], (51, 40)),
-        ("Villa de Cortés", [2], (54, 40)),
-        ("Nativitas", [2], (57, 40)),
-        ("Portales", [2], (60, 40)),
-        ("Ermita", [2], (63, 40)),
-        ("General Anaya", [2], (66, 40)),
-        ("Tasqueña", [2], (69, 40)),
+        ("San Antonio Abad", [2], (31, 50)),
+        ("Chabacano", [2], (31, 45)),
+        ("Viaducto", [2], (31, 40)),
+        ("Xola", [2], (31, 35)),
+        ("Villa de Cortés", [2], (31, 30)),
+        ("Nativitas", [2], (31, 25)),
+        ("Portales", [2], (31, 20)),
+        ("Ermita", [2], (31, 15)),
+        ("General Anaya", [2], (31, 10)),
+        ("Tasqueña", [2], (31, 5)),
     ]
     
     conexiones_l2 = [
@@ -575,26 +575,27 @@ def crear_metro_cdmx_completo() -> GrafoMetro:
     
     # ========== LÍNEA 3 (VERDE) - Indios Verdes ↔ Universidad ==========
     estaciones_l3 = [
-        ("Indios Verdes", [3], (27, 0)),
-        ("Deportivo 18 de Marzo", [3], (27, 5)),
-        ("Potrero", [3], (27, 10)),
-        ("La Raza", [3, 5], (27, 15)),
-        ("Tlatelolco", [3], (27, 20)),
+        ("Indios Verdes", [3], (36, 90)),
+        ("Deportivo 18 de Marzo", [3], (34, 85)),
+        ("Potrero", [3], (32, 80)),
+        ("La Raza", [3, 5], (30, 75)),
+        ("Tlatelolco", [3], (28, 70)),
+        ("Guerrero", [3], (24, 67)),
         # Hidalgo ya existe en L2
-        ("Juárez", [3], (27, 30)),
+        ("Juárez", [3], (21, 60)),
         # Balderas ya existe en L1
-        ("Niños Héroes", [3], (27, 40)),
-        ("Hospital General", [3], (27, 45)),
-        ("Centro Médico", [3], (27, 50)),
-        ("Etiopía", [3], (27, 55)),
-        ("Eugenia", [3], (27, 60)),
-        ("División del Norte", [3], (27, 65)),
-        ("Zapata", [3], (27, 70)),
-        ("Coyoacán", [3], (27, 75)),
-        ("Viveros", [3], (27, 80)),
-        ("Miguel Ángel de Quevedo", [3], (27, 85)),
-        ("Copilco", [3], (27, 90)),
-        ("Universidad", [3], (27, 95)),
+        ("Niños Héroes", [3], (21, 52)),
+        ("Hospital General", [3], (19, 49)),
+        ("Centro Médico", [3], (19, 46)),
+        ("Etiopía", [3], (18, 41)),
+        ("Eugenia", [3], (17, 36)),
+        ("División del Norte", [3], (16, 31)),
+        ("Zapata", [3], (15, 26)),
+        ("Coyoacán", [3], (14, 21)),
+        ("Viveros", [3], (12, 16)),
+        ("Miguel Ángel de Quevedo", [3], (13, 11)),
+        ("Copilco", [3], (12, 6)),
+        ("Universidad", [3], (11, 1)),
     ]
     
     conexiones_l3 = [
@@ -602,8 +603,9 @@ def crear_metro_cdmx_completo() -> GrafoMetro:
         ("Deportivo 18 de Marzo", "Potrero", 0.92),
         ("Potrero", "La Raza", 0.96),
         ("La Raza", "Tlatelolco", 1.08),
-        ("Tlatelolco", "Hidalgo", 0.94),
-        ("Hidalgo", "Juárez", 0.71),
+        ("Tlatelolco", "Guerrero", 0.94),
+        ("Guerrero", "Hidalgo", 0.78),
+        ("Hidalgo", "Juárez", 0.30),
         ("Juárez", "Balderas", 0.66),
         ("Balderas", "Niños Héroes", 0.88),
         ("Niños Héroes", "Hospital General", 0.75),
@@ -621,15 +623,16 @@ def crear_metro_cdmx_completo() -> GrafoMetro:
     
     # ========== LÍNEA 4 (CIAN) - Martín Carrera ↔ Santa Anita ==========
     estaciones_l4 = [
-        ("Martín Carrera", [4], (50, 0)),
-        ("Talismán", [4], (50, 5)),
-        ("Bondojito", [4], (50, 10)),
-        ("Consulado", [4, 5], (50, 15)),
-        ("Canal del Norte", [4], (50, 20)),
+        ("Martín Carrera", [4], (42, 85)),
+        ("Talismán", [4], (44, 80)),
+        ("Bondojito", [4], (50, 73)),
+        ("Consulado", [4, 5], (50, 69)),
+        ("Canal del Norte", [4], (50, 64)),
+        ("Morelos", [4], (44, 60)),
         # Candelaria ya existe en L1
-        ("Fray Servando", [4], (50, 30)),
-        ("Jamaica", [4], (50, 35)),
-        ("Santa Anita", [4], (50, 40)),
+        ("Fray Servando", [4], (34, 50)),
+        ("Jamaica", [4], (34, 45)),
+        ("Santa Anita", [4], (34, 40)),
     ]
     
     conexiones_l4 = [
@@ -637,7 +640,8 @@ def crear_metro_cdmx_completo() -> GrafoMetro:
         ("Talismán", "Bondojito", 0.87),
         ("Bondojito", "Consulado", 0.94),
         ("Consulado", "Canal del Norte", 1.03),
-        ("Canal del Norte", "Candelaria", 0.96),
+        ("Canal del Norte", "Morelos", 0.96),
+        ("Morelos", "Candelaria", 1.11),
         ("Candelaria", "Fray Servando", 0.89),
         ("Fray Servando", "Jamaica", 0.92),
         ("Jamaica", "Santa Anita", 1.07),
@@ -645,18 +649,18 @@ def crear_metro_cdmx_completo() -> GrafoMetro:
     
     # ========== LÍNEA 5 (AMARILLA) - Politécnico ↔ Pantitlán ==========
     estaciones_l5 = [
-        ("Politécnico", [5], (15, 15)),
-        ("Instituto del Petróleo", [5], (18, 18)),
-        ("Autobuses del Norte", [5], (21, 21)),
+        ("Politécnico", [5], (21, 90)),
+        ("Instituto del Petróleo", [5], (24, 85)),
+        ("Autobuses del Norte", [5], (27, 80)),
         # La Raza ya existe en L3
-        ("Misterios", [5], (27, 27)),
-        ("Valle Gómez", [5], (30, 30)),
+        ("Misterios", [5], (35, 73)),
+        ("Valle Gómez", [5], (40, 71)),
         # Consulado ya existe en L4
-        ("Eduardo Molina", [5], (36, 36)),
-        ("Aragón", [5], (39, 39)),
-        ("Oceanía", [5], (42, 42)),
-        ("Terminal Aérea", [5], (45, 45)),
-        ("Hangares", [5], (48, 48)),
+        ("Eduardo Molina", [5], (52, 65)),
+        ("Aragón", [5], (53, 62)),
+        ("Oceanía", [5], (54, 59)),
+        ("Terminal Aérea", [5], (55, 56)),
+        ("Hangares", [5], (56, 53)),
         # Pantitlán ya existe en L1
     ]
     
@@ -766,13 +770,20 @@ while True:
         estaciones_linea = [est.nombre for est in metro.estaciones.values() if int(linea) in est.lineas]
         print(", ".join(estaciones_linea))
         inicio = input("\nIngresa la estación de origen: ")
-        destino = input("Ingresa la estación de destino: ")
-        hora = int(input("Define la hora actual (0-23): "))
-        prisa_input = input("¿Tienes prisa? (si/no): ").strip().lower()
-        prisa = prisa_input == 'si'
-        accesibilidad_input = input("¿Necesitas accesibilidad? (si/no): ").strip().lower()
-        accesibilidad = accesibilidad_input == 'si'
-        func(inicio, destino, hora, prisa, accesibilidad)
+        lineaD = input("Selecciona la línea de destino: ")
+        if lineaD in ['1', '2', '3', '4', '5']:
+            estaciones_lineaD = [est.nombre for est in metro.estaciones.values() if int(lineaD) in est.lineas]
+            print(f"\n✓ Has seleccionado la línea {lineaD}. Estaciones disponibles:")
+            print(", ".join(estaciones_lineaD))
+            destino = input("Ingresa la estación de destino: ")
+            hora = int(input("Define la hora actual (0-23): "))
+            prisa_input = input("¿Tienes prisa? (si/no): ").strip().lower()
+            prisa = prisa_input == 'si'
+            accesibilidad_input = input("¿Necesitas accesibilidad? (si/no): ").strip().lower()
+            accesibilidad = accesibilidad_input == 'si'
+            func(inicio, destino, hora, prisa, accesibilidad)
+        else:
+            print("❌ Línea de destino no válida. Por favor, selecciona una línea entre 1 y 5.")
     elif linea == '0':
         print("\n¡Hasta luego!")
         break  
